@@ -35,7 +35,7 @@ def parallel_runner():
         p.join()
 
     end=time.perf_counter()
-    print(f'Serial: {end-start} second(s)')
+    print(f'Parallel: {end-start} second(s)')
 
 if __name__ == '__main__':
     serial_runner()
