@@ -22,20 +22,20 @@ if __name__ == "__main__":
 ```
 
 | Provide your answer here. |
-| ------------------------- |
-|                           |
+|---------------------------|
+| O(n)                      |
 
 3. What is the space complexity of the above script?
 
 | Provide your answer here. |
-| ------------------------- |
-|                           |
+|---------------------------|
+| O(1)                      |
 
 4. Is this a computationally or data-intensive task?
 
 | Provide your answer here. |
-| ------------------------- |
-|                           |
+|---------------------------|
+| Computationally Intensive |
 
 > [!TIP]
 >
@@ -52,8 +52,8 @@ if __name__ == "__main__":
 ```
 
 | Provide your answer here. |
-| ------------------------- |
-|                           |
+|---------------------------|
+| O(1)                      |
 
 6. What is the time complexity of the following code?
 
@@ -68,13 +68,13 @@ if __name__ == "__main__":
 ```
 
 | Provide your answer here. |
-| ------------------------- |
-|                           |
+|---------------------------|
+| O(1)                      |
 
 7. What is the time complexity of the following code?
 
 ```python
-def sum_elements(arr):
+ef sum_elements(arr):
     total = 0
     for num in arr:
         total += num
@@ -98,10 +98,10 @@ if __name__ == "__main__":
 9. What is the time complexity of the following code?
 
 ```python
-def count_lines(filename):
+def count_characters(filename):
   count=0
   with open(filename, 'r') as file:
-    for line in file:
+    for char in file:
       count+=1
             
   return count
@@ -109,8 +109,8 @@ def count_lines(filename):
 if __name__ == "__main__":
   filename = 'file1.txt'
   try:
-      counts = count_lines(filename)
-      print("Line counts:", counts)
+      counts = count_characters(filename)
+      print("Letter counts:", counts)
   except FileNotFoundError:
       print("File not found")
 ```
