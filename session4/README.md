@@ -351,20 +351,16 @@ print(f"Final counter value: {counter}")
 
 1. **Initialization**: A semaphore with a value of 2 is created, and the number of threads (`n`) is set to 5.
 
-2. **Function Definitions**: Two functions (`do_something` and `worker`) are defined. The `worker` function uses the semaphore to control access to its critical section.
+2. **Function definitions**: Two functions (`do_something` and `worker`) are defined. The `worker` function uses the semaphore to control access to its critical section.
 
-3. **Thread Pool**: A thread pool with a maximum of 5 threads is created using `ThreadPoolExecutor`.
+3. **Thread pool**: A thread pool with a maximum of 5 threads is created using `ThreadPoolExecutor`.
 
-4. Submitting Tasks
-
-   :
+4. Submitting Tasks:
 
    - `do_something` tasks are submitted to the thread pool, creating 5 futures in `futures1`.
    - `worker` tasks are submitted to the thread pool, creating 5 futures in `futures2`.
 
-5. **Optional Waiting**: The main thread can wait for all futures to complete if the commented-out section is uncommented.
-
-6. **Concurrency Control**: The semaphore ensures that only up to 2 `worker` threads can be in their critical section at the same time, demonstrating synchronization and concurrency control.
+5. **Concurrency control**: The semaphore ensures that only up to 2 `worker` threads can be in their critical section at the same time, demonstrating synchronization and concurrency control.
 
 By using the semaphore, this code ensures that the `worker` function's critical section is never accessed by more than 2 threads simultaneously, while the `do_something` function runs without such restrictions. The `ThreadPoolExecutor` manages the creation and execution of threads, simplifying the process of working with multiple threads.
 
