@@ -1,9 +1,10 @@
 ### Exercise 1
 
-**Download the images using the URLs of the `image_urls.txt` file.**
+**Download images using URLs that are included in the `image_urls.txt` file.**
 
 * Use the following scripts to download the images using a serial programming solution.
 * Then, use `Threads` or the  `ThreadPoolExecutor`  to download the images in parallel.
+* Feel free to assign random names to the files (e.g. 1.jpg,2.jpg etc.).
 * Compare the time taken for both tasks.
 
 **Supporting material.**
