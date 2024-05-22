@@ -2,8 +2,8 @@
 
 **Extract random text using the `Faker` library and store it in a file.** 
 
-* Using a serial programming approach, use the following scripts to store data in a file.
-* Then, use `Threads` or the  `ThreadPoolExecutor`  to store data in parallel in the same file.
+* Using a serial programming approach, store random text in a file.
+* Then, use `Threads` or the  `ThreadPoolExecutor`  to store text in the same file using a mutex.
 * Compare the time taken for both tasks.
 
 **Supporting material.**
