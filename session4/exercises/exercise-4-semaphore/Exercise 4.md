@@ -1,9 +1,10 @@
 ### Exercise 4
 
-**Extract three currency conversions at a time using the `api.frankfurter.app`.**
+**Limit to three concurrent currency conversions at atime in the `api.frankfurter.app`.**
 
 * You can reuse the code developed in exercise 2.
 * Use a `semaphore` of the `threading` library.
+* You can run up to two threads in your critical section at a time.
 
 **Supporting material.**
 
