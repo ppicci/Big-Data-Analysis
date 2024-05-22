@@ -2,15 +2,15 @@
 
 **Extract random text using the `Faker` library and store it in a file.** 
 
-* Using a serial programming approach, use the following scripts to collect data from an API.
-* Then, use `Threads` or the  `ThreadPoolExecutor`  to fetch data in parallel.
+* Using a serial programming approach, use the following scripts to store data in a file.
+* Then, use `Threads` or the  `ThreadPoolExecutor`  to store data in parallel in the same file.
 * Compare the time taken for both tasks.
 
 **Supporting material.**
 
 You can use the following scripts as your starting point. 
 
-* Explore the following scripts that create a new record in a file using the faker library. Firstly, install the library.
+* Explore the following scripts that create a new record in a file using the `faker` library. Firstly, install the library.
 
 ```
 pip3 install Faker
