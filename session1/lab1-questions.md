@@ -99,20 +99,21 @@ if __name__ == "__main__":
 
 ```python
 def count_characters(filename):
-  count=0
-  with open(filename, 'r') as file:
-    for char in file:
-      count+=1
-            
-  return count
+    count = 0
+    with open(filename, 'r') as file:
+        for char in file:
+            count += 1
+
+    return count
+
 
 if __name__ == "__main__":
-  filename = 'file1.txt'
-  try:
-      counts = count_characters(filename)
-      print("Letter counts:", counts)
-  except FileNotFoundError:
-      print("File not found")
+    filename = 'CodeP1/file1.txt'
+    try:
+        counts = count_characters(filename)
+        print("Letter counts:", counts)
+    except FileNotFoundError:
+        print("File not found")
 ```
 
 | Provide your answer here. |
@@ -419,8 +420,8 @@ if __name__ == "__main__":
 5. What is the computational complexity of the above script?
 
 | Provide your answer here. |
-| ------------------------- |
-|                           |
+|---------------------------|
+| Time: O(n) , Space: O(1)  |
 
 6. Create a `search_password` function to search for a password in a given file.
 

@@ -8,7 +8,7 @@ def count_characters(filename):
 
 
 if __name__ == "__main__":
-    filename = '../file1.txt'
+    filename = 'file1.txt'
     try:
         counts = count_characters(filename)
         print("Letter counts:", counts)
