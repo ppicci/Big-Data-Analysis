@@ -86,14 +86,14 @@ if __name__ == "__main__":
 ```
 
 | Provide your answer here. |
-| ------------------------- |
-|                           |
+|---------------------------|
+| O(n)                      |
 
 8. Is this a computationally or data-intensive task?
 
 | Provide your answer here. |
-| ------------------------- |
-|                           |
+|---------------------------|
+| Computationally Intensive |
 
 9. What is the time complexity of the following code?
 
@@ -116,8 +116,8 @@ if __name__ == "__main__":
 ```
 
 | Provide your answer here. |
-| ------------------------- |
-|                           |
+|---------------------------|
+| O(n)                      |
 
 > [!IMPORTANT]
 >
@@ -126,14 +126,14 @@ if __name__ == "__main__":
 10. What is the space complexity of the above code?
 
 | Provide your answer here. |
-| ------------------------- |
-|                           |
+|---------------------------|
+| O(1)                      |
 
 11. Is this a computationally or data-intensive task?
 
 | Provide your answer here. |
 | ------------------------- |
-|                           |
+| Computationally Intensive |
 
 12. Compare the following scripts; which one do you prefer and why?
 
@@ -166,16 +166,16 @@ if __name__ == "__main__":
 
     \* Both are the same
 
-| Provide your answer here. |
-| ------------------------- |
-|                           |
+| Provide your answer here.     |
+|-------------------------------|
+| Reverse 2 - Doesn't use Space |
 
 12. What are the time and space complexities for reverse1 and reverse2?
 
-| Provide your answer here. |
-| ------------------------- |
-| `reverse1`:               |
-| `reverse2`:               |
+| Provide your answer here.              |
+|----------------------------------------|
+| `reverse1`:  Time = O(n), Space = O(n) |
+| `reverse2`:  Time = O(n), Space = O(1) |
 
 12. What is the time complexity of the following code?
 
@@ -194,14 +194,14 @@ if __name__ == "__main__":
 ```
 
 | Provide your answer here. |
-| ------------------------- |
-|                           |
+|---------------------------|
+| O(n^2)                    |
 
 13. What is the space complexity of the previous script?
 
 | Provide your answer here. |
-| ------------------------- |
-|                           |
+|---------------------------|
+| O(1)                      |
 
 14. Examine the next code.
 
@@ -223,15 +223,15 @@ if __name__ == "__main__":
 
 15. What is the purpose of this script?
 
-| Provide your answer here. |
-| ------------------------- |
-|                           |
+| Provide your answer here.                                         |
+|-------------------------------------------------------------------|
+| Counts the iterations to find n ( = the array length in our case) |
 
 16. What is the time complexity of this script?
 
 | Provide your answer here. |
-| ------------------------- |
-|                           |
+|---------------------------|
+| O(n^2)                    |
 
 17. Analyse the Provided Code.
 
@@ -253,15 +253,15 @@ if __name__ == "__main__":
 
 18. What is the purpose of the script? 
 
-| Provide your answer here. |
-| ------------------------- |
-|                           |
+| Provide your answer here.  |
+|----------------------------|
+| Counts the number of swaps |
 
 19. Why does it output 12?
 
-| Provide your answer here. |
-| ------------------------- |
-|                           |
+| Provide your answer here.         |
+|-----------------------------------|
+| It does 12 swaps to sort the data |
 
 20. What is the purpose of the script?
 
@@ -287,9 +287,9 @@ if __name__ == "__main__":
 
 21. Why does it output 21?
 
-| Provide your answer here. |
-| ------------------------- |
-|                           |
+| Provide your answer here.                                                                                                                    |
+|----------------------------------------------------------------------------------------------------------------------------------------------|
+| It returns 21 as it is counting the iterations <br/>which happens 21 times as it no longer<br/> iteratiing over already sorted code sections |
 
 22. What is the time complexity of this script?
 
@@ -313,8 +313,8 @@ if __name__ == "__main__":
 ```
 
 | Provide your answer here. |
-| ------------------------- |
-|                           |
+|---------------------------|
+| O(log n)                  |
 
 23. The following script generates all the possible permutations of a given list. Without running the script, can you define the time complexity of this script?
 
@@ -333,14 +333,14 @@ if __name__ == "__main__":
 ```
 
 | Provide your answer here. |
-| ------------------------- |
-|                           |
+|---------------------------|
+| O(n!)                     |
 
 24. What is the length of the output list if the input list has 5 numbers?
 
 | Provide your answer here. |
-| ------------------------- |
-|                           |
+|---------------------------|
+| 120 (= 5!)                |
 
 25. What is the computational complexity of the following script?
 
@@ -353,8 +353,8 @@ if __name__ == "__main__":
 ```
 
 | Provide your answer here. |
-| ------------------------- |
-|                           |
+|---------------------------|
+| O(n^2)                    |
 
 ### BDA Seminar 1 - Part 2
 
