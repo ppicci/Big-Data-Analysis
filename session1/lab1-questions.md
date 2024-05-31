@@ -451,9 +451,9 @@ if __name__ == "__main__":
 
 8. Does your input affect the time complexity?
 
-| Provide your answer here. |
-| ------------------------- |
-|                           |
+| Provide your answer here.                        |
+|--------------------------------------------------|
+| No, time complexity is independent of the inputs |
 
 **:mount_fuji: The following tasks are challenging.**
 
@@ -480,8 +480,8 @@ if __name__ == "__main__":
 10. What is the space complexity?
 
 | Provide your answer here. |
-| ------------------------- |
-|                           |
+|---------------------------|
+| O(n)                      |
 
 11. Create a script to find the duplicated records in the `rockyou.tx`t file.
 
@@ -500,7 +500,7 @@ if __name__ == "__main__":
 12. What is this script's time and space complexity if you don't use a set? What is when using sets?
 
 | Provide your answer here. |
-| ------------------------- |
-| Time:                     |
-| Space:                    |
+|---------------------------|
+| Time:  O(n^2)             |
+| Space: O(n)               |
 
