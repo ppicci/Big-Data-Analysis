@@ -63,89 +63,101 @@ USE lab1_exercise_db;
 8. Provide the SQL script to create the table.
 
 ```sql
-?
+CREATE TABLE planets (
+planet_id VARCHAR(30),
+planet_name VARCHAR(30),
+planet_terrain VARCHAR(30),
+planet_size INT(6),
+PRIMARY KEY (planet_id)
+);
 ```
 
 9. Run a command to show the available tables.
 
 ```
-?
+SHOW TABLES;
 ```
 
 10. Provide an SQL script to insert all the data into the `planets` table.
 
 ```sql
-?
+INSERT INTO planets (planet_id, planet_name, planet_terrain, planet_size)
+VALUES ('A1', 'Tatooine', 'Desert', 10465);
+
+INSERT INTO planets (planet_id, planet_name, planet_terrain, planet_size)
+VALUES ('A2', 'Coruscant', 'Urban area', 6100);
+
 ```
 
 11. Provide an SQL script to extract all the data and print it.
 
 ```mysql
-?
+SELECT * FROM planets;
 ```
 
 12. Provide an SQL script to insert the following data.
 
-| planet_id | planet_name  | planet_terrain | planet_size |
-| --------- | ------------ | -------------- | ----------- |
-| A3        | Death  Start | Urban  area    | 120         |
+| planet_id | planet_name | planet_terrain | planet_size |
+| --------- | ----------- | -------------- | ----------- |
+| A3        | Death  Star | Urban  area    | 120         |
 
 ```mysql
-?
+INSERT INTO planets (planet_id, planet_name, planet_terrain, planet_size)
+VALUES ('A3', 'Death Star', 'Urban area', 120);
 ```
 
 13. Run the previous insert command once more. Does it fail, and why?
 
-```mysql
-?
+```
+It doesn't run as the database rejects duplicate entries
 ```
 
 13. Provide an SQL script to **extract all the data** and print it.
 
 ```mysql
-?
+SELECT * FROM planets;
 ```
 
 14. Provide an SQL script to **extract all the planets** that have a size **greater than 5000** km.
 
 ```mysql
-?
+SELECT * FROM planets WHERE planet_size > 5000;
 ```
 
 15. Provide an SQL script to extract the planet names that have a **desert** terrain.
 
 ```mysql
-?
+SELECT planet_name FROM planets WHERE planet_terrain = 'Desert';
 ```
 
 16. Provide an SQL script to **update** the size of the **Coruscant** planet to **6120**.
 
 ```mysql
-?
+UPDATE planets SET planet_size = 6120 WHERE planet_name = 'Coruscant';
 ```
 
 17. Provide an SQL script to add a new column called `planet_population`. The new column should include **integers of up to 20 digits** in size.
 
 ```mysql
-?
+ALTER TABLE planets ADD planet_population INT(20);
 ```
 
 18. Provide an SQL script to **update Tatooine's population to 200000**.
 
 ```mysql
-?
+UPDATE planets SET planet_population = 200000 WHERE planet_name = 'Tatooine';
 ```
 
 19. Provide an SQL script to **delete the planet** `Death Star` from the table.
 
 ```mysql
-?
+DELETE FROM planets WHERE planet_name = 'Death Star';
 ```
 
 20. Provide an SQL script to extract all the **planet names, terrains and sizes** for those **planets that start with the letter** `T`.
 
 ```mysql
-?
+SELECT planet_name, planet_terrain, planet_size FROM planets WHERE planet_name LIKE 'T%';
 ```
 
 :checkered_flag: Well done! 
