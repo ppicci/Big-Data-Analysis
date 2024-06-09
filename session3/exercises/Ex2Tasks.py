@@ -1,3 +1,4 @@
+import os
 import requests
 import re
 import multiprocessing
@@ -16,7 +17,7 @@ urls = [
         'http://www.gutenberg.org/files/1661/1661-0.txt'  # The Adventures of Sherlock Holmes by Arthur Conan Doyle
     ]
 
-
+os.makedirs('Saved Books', exist_ok=True)
 def save_text_to_file(text_list, filename):
     with open(filename, 'w', encoding='utf-8') as file:
         for text in text_list:
@@ -28,7 +29,8 @@ def download_book(url):
     pattern = r'[^/]+$'
     match = (re.search(pattern, url))
     title = match.group(0)
-    save_text_to_file(book, title)
+    directory= os.path.join('Saved Books', title)
+    save_text_to_file(book, directory)
     return book
 
 def serial_runner():
