@@ -38,7 +38,6 @@ def serial_runner():
     end = time.perf_counter()
     print(f'Serial: {end - start} second(s)')
 
-# Parallel runner
 def parallel_runner():
     start = time.perf_counter()
     processes = []
