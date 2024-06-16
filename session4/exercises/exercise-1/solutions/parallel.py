@@ -2,7 +2,7 @@ import requests,time
 from concurrent.futures import ThreadPoolExecutor
 from tools import *
 
-img_urls = load_data('image_urls.txt')
+img_urls = load_data('image_urls_small.txt')
 
 t1 = time.perf_counter()
 
