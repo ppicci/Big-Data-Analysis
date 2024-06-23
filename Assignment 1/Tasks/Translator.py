@@ -1,26 +1,27 @@
-import threading
 from pathlib import Path
-from textblob import TextBlob
+from googletrans import Translator
 import time
 import multiprocessing
+import threading
 
 
-def sentiment_analyser(file):
+def translate(file):
     with open(file, 'r') as f:
         text = f.read()
 
     # print(text)
 
-    blob = TextBlob(text)
-    # print(blob.sentiment)
-    sentiment = blob.sentiment
+    translator = Translator()
+
+    translation = translator.translate(text, src='en', dest='it')
+    # print(translation.text)
     name = Path(file).stem
     # print(name)
-    output_path = f"Sentiments/{name}/{name}.txt"
+    output_path = f"Translations/{name}/{name}.txt"
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
 
     with open(output_path, 'w') as file:
-        file.write(str(sentiment))
+        file.write("Text in Italian: "+str(translation.text))
     print(f'Text has been written to {output_path}')
 
 
@@ -29,9 +30,9 @@ def serial_runner():
     start = time.perf_counter()
     for file in folder.rglob("*.txt"):
         # print(file)
-        sentiment_analyser(file)
+        translate(file)
     end = time.perf_counter()
-    print("\nSerial Sentiment Analysis:")
+    print("\nSerial Translation:")
     print(f"Finished in {end - start:.2f} seconds\n")
 
 
@@ -39,9 +40,9 @@ def multiprocess_runner():
     folder = Path("Transcriptions")
     start = time.perf_counter()
     with multiprocessing.Pool() as pool:
-        pool.map(sentiment_analyser, folder.rglob("*.txt"))
+        pool.map(translate, folder.rglob("*.txt"))
     end = time.perf_counter()
-    print("\nMultiprocess Sentiment Analysis:")
+    print("\nMultiprocess Translation:")
     print(f"Finished in {end - start:.2f} seconds\n")
 
 
@@ -50,17 +51,17 @@ def thread_runner():
     threads = []
     start = time.perf_counter()
     for file in folder.rglob("*.txt"):
-        t = threading.Thread(target=sentiment_analyser, args=(file,))
+        t = threading.Thread(target=translate, args=(file,))
         threads.append(t)
         t.start()
     for t in threads:
         t.join()
     end = time.perf_counter()
-    print("\nThreads Sentiment Analysis:")
+    print("\nThreads Translation:")
     print(f"Finished in {end - start:.2f} seconds\n")
 
 
 if __name__ == "__main__":
-    serial_runner()  # 0.03s
-    multiprocess_runner()  # 2.27s
-    thread_runner()  # Fastest - 0.02s
+    serial_runner()#1.71s
+    multiprocess_runner()#1.06s
+    thread_runner()#Fastest - 0.25s
