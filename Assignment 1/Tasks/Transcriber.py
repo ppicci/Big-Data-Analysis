@@ -1,3 +1,4 @@
+import threading
 from pathlib import Path
 import speech_recognition as sr
 import time
@@ -49,8 +50,23 @@ def multiprocess_runner():
     print("\nMultiprocess Transcription:")
     print(f"Finished in {end - start:.2f} seconds\n")
 
+def thread_runner():
+    folder = Path("Audio")
+    threads = []
+    start = time.perf_counter()
+    for file in folder.rglob("*.wav"):
+        t = threading.Thread(target=transcribe, args=(file,))
+        threads.append(t)
+        t.start()
+    for t in threads:
+        t.join()
+    end = time.perf_counter()
+    print("\nThread Transcription:")
+    print(f"Finished in {end - start:.2f} seconds\n")
+
 
 if __name__ == '__main__':
-    #serial_runner()#193.25s
-    multiprocess_runner()#60.12
+    serial_runner()#169.53s
+    multiprocess_runner()#Fastest - 67.80s
+    thread_runner()#79.40s
 
