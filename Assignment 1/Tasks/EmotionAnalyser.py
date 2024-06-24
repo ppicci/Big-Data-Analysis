@@ -5,10 +5,10 @@ import time
 import multiprocessing
 import threading
 
-
+nlp = spacy.load('en_core_web_sm')
+nltk.download('punkt')
 def emotion_analyser(file):
-    nlp = spacy.load('en_core_web_sm')
-    nltk.download('punkt')
+
 
     with open(file, 'r') as f:
         text = f.read()
@@ -68,6 +68,6 @@ def thread_runner():
 
 
 if __name__ == '__main__':
-    serial_runner()#4.49s
-    multiprocess_runner()#4.88s
-    thread_runner()#fastest - 4.21s
+    serial_runner()#-Fastest - 0.07s
+    multiprocess_runner()#4.51s
+    thread_runner()#0.10s

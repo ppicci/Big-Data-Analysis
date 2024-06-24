@@ -61,6 +61,6 @@ def thread_runner():
 
 
 if __name__ == "__main__":
-    serial_runner()  # 0.03s
-    multiprocess_runner()  # 2.27s
-    thread_runner()  # Fastest - 0.02s
+    serial_runner()  #0.03s
+    multiprocess_runner()  #2.27s
+    thread_runner()  #Fastest - 0.02s
