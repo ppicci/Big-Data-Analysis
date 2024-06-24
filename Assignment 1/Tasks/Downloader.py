@@ -1,4 +1,5 @@
 import concurrent.futures
+import multiprocessing
 import threading
 import time
 import logging
@@ -123,10 +124,26 @@ def parallel_threadpool_runner(filename):
     print("\nParallel download with thread pool:")
     print(f"Finished in {end - start:.2f} seconds\n")
 
+def parallel_multiprocess_runner(filename):
+    """
+    Download videos in parallel using multiprocessing from URLs in the given file.
+
+    Args:
+        filename (str): The path to the file containing video URLs.
+    """
+    video_list = url_loader(filename)
+    start = time.perf_counter()
+    with multiprocessing.Pool(processes=5) as executor:
+        executor.map(yt_downloader, video_list)
+    end = time.perf_counter()
+    print("\nParallel download with multiprocess pool:")
+    print(f"Finished in {end - start:.2f} seconds\n")
+
 
 if __name__ == '__main__':
     filename = "Input/Video Urls.txt"
 
-    serial_runner(filename)
-    parallel_thread_runner(filename)  # fastest
-    parallel_threadpool_runner(filename)
+    serial_runner(filename)#15.90s
+    parallel_thread_runner(filename) #7.28s
+    parallel_threadpool_runner(filename)#7.57s
+    parallel_multiprocess_runner(filename)#fastest -7.03s
