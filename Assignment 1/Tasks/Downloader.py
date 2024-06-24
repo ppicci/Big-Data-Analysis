@@ -5,7 +5,7 @@ import time
 import logging
 from pathlib import Path
 from pytube import YouTube
-
+import os
 # Logging set up
 Path("Logs").mkdir(parents=True, exist_ok=True)
 logging.basicConfig(filename='../Tasks/Logs/Download Log.txt', level=logging.INFO,
@@ -42,8 +42,10 @@ def logger(url, download):
         url (str): The video URL.
         download (bool): The download status.
     """
+    thread_id = threading.get_ident()  # Gets thread ID
+    process_id = os.getpid()  # Gets process ID
     with log_mutex:
-        logging.info(f'"URL":"{url}", "Download":{download}')
+        logging.info(f'"URL":"{url}", "Download":{download}, "Thread ID:{thread_id}", "Process ID:{process_id}"')
 
 
 def yt_downloader(url):
@@ -136,7 +138,7 @@ def parallel_multiprocess_runner(filename):
     with multiprocessing.Pool(processes=5) as executor:
         executor.map(yt_downloader, video_list)
     end = time.perf_counter()
-    print("\nParallel download with multiprocess pool:")
+    print("\nParallel download with multiprocessing:")
     print(f"Finished in {end - start:.2f} seconds\n")
 
 
