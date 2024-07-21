@@ -19,11 +19,11 @@ def reset_database(host, user, password, db_name):
     conn = db_connection(host, user, password,db_name)
     if conn:
         try:
-            # Show databases before dropping
+
             print("Databases before dropping:")
             show_databases(conn)
 
-            # Confirm before dropping the database
+
             response = input(f"Are you sure you want to drop the database {db_name}? Type 'yes' to confirm: ")
             if response.lower() == 'yes':
                 drop_database(conn, db_name)

@@ -5,6 +5,7 @@ from dbQueries import dbQueries
 import decimal
 import datetime
 
+
 def create_database(connection, db_name):
     cursor = connection.cursor()
     try:
@@ -40,23 +41,27 @@ def check_database_connection(host, user, password, database_name):
         show_databases(db_conn)
         db_conn.close()
 
+
 def print_results(cursor):
-    """ Helper function to print results with column headers and formatted data. """
     columns = [desc[0] for desc in cursor.description]
-    print(", ".join(columns))  # Print column headers
+    print(", ".join(columns))
 
     for row in cursor.fetchall():
         formatted_row = []
+
         for item in row:
+
             if isinstance(item, decimal.Decimal):
-                # Format decimal as a float
                 formatted_row.append(f"{float(item):.2f}")
+
             elif isinstance(item, datetime.date):
-                # Format date as a string
                 formatted_row.append(item.strftime('%Y-%m-%d'))
+
             else:
                 formatted_row.append(str(item))
+
         print(", ".join(formatted_row))
+
 
 def create_and_display_tables(host, user, password, database_name):
     conn = db_connection(host, user, password, database_name)
@@ -70,13 +75,14 @@ def create_and_display_tables(host, user, password, database_name):
 
                 cursor.execute(f"SELECT * FROM {table_name};")
                 print(f"Contents of {table_name}:")
-                print_results(cursor)  # Use the helper function
+                print_results(cursor)
                 print()
 
             except Error as err:
                 print(f"Error creating/displaying table {table_name}: {err}")
         cursor.close()
         close_connection(conn)
+
 
 def insert_and_display_tables(host, user, password, database_name):
     conn = db_connection(host, user, password, database_name)
@@ -90,13 +96,14 @@ def insert_and_display_tables(host, user, password, database_name):
 
                 cursor.execute(f"SELECT * FROM {table_name};")
                 print(f"New contents of {table_name}:")
-                print_results(cursor)  # Use the helper function
+                print_results(cursor)
                 print()
 
             except Error as err:
                 print(f"Error inserting into/displaying table {table_name}: {err}")
         cursor.close()
         close_connection(conn)
+
 
 def query_and_display_results(host, user, password, database_name):
     conn = db_connection(host, user, password, database_name)
@@ -106,7 +113,7 @@ def query_and_display_results(host, user, password, database_name):
             try:
                 cursor.execute(query_command)
                 print(f"{query_name} Result:")
-                print_results(cursor)  # Use the helper function
+                print_results(cursor)
                 print()
 
             except Error as err:
